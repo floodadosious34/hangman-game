@@ -1,0 +1,28 @@
+* {
+
+}
+
+body {
+
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.subject {
+    border-bottom: solid 1px black;
+    margin: 2em;
+}
+
+.word-guess {
+    margin: 0 auto 20px;
+}
+
+.hangman-box {
+    border: solid 1px black;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto 20px;
+}
