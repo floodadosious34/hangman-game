@@ -1,10 +1,4 @@
-
-
-
-let hangmanTries = 6
-let hangmanAttepmts = 0
-let objectArray = []
-
+// Get Elementes from index.html and store in variables
 const letterbutton = document.querySelector('#alphabet')
 const buttons = document.querySelectorAll('#alphabet button')
 const hintButton = document.getElementById('hint')
@@ -16,8 +10,16 @@ const hintDiv = document.querySelector('.hint-div')
 const hangmanPic = document.getElementById('hangmanPic')
 const gameArea = document.querySelector('.game-play-area')
 const startPage = document.getElementById('startPage')
-// triesLeft.innerHTML = `Tries left: ${hangmanTries}`
 
+// Declare variablels to be used in setting game up
+let hangmanTries = 6
+let hangmanAttepmts = 0
+let objectArray = []
+const array = []
+let chosenTitle;
+let chosenHint;
+
+//Functions for getting category, object, array, and displaying page
 function randomObject(arr) {
     const i = Math.floor(Math.random() * arr.length)
     const object = arr[i]
@@ -30,8 +32,6 @@ function setupGame() {
     startPage.style.display = 'block'
     objectArray = []
 }
-
-setupGame()
 
 function startGame() {
     gameArea.style.display = 'block'
@@ -51,16 +51,7 @@ function startGame() {
     chosenTitle = wordArray
     chosenHint = chosenObject.hint
 }
-
-let chosenTitle;
-let chosenHint;
-// startGame()
 console.log(chosenTitle)
-
-// const category = object.category
-//     const hint = object.hint
-//     const randomWord = Array.from(object.title)
-// const wordArray = 
 
 function addPhraseToDisplay(arr, arr2) {
     arr.forEach(item => {
@@ -76,8 +67,7 @@ function addPhraseToDisplay(arr, arr2) {
         }
         return li
     })
-    subject.innerHTML = `Catergory: ${arr2}`
-    
+    subject.innerHTML = `Catergory: ${arr2}`  
 };
 
 
@@ -106,10 +96,7 @@ function checkWin() {
     }
 }
 
-hintButton.addEventListener('click', (e) => {
-    hintDiv.innerHTML = chosenHint
-})
-
+// Add Event listeners for button on click
 startButton.addEventListener('click', (e) => {
     let child = phraseUl.lastElementChild
     while(child) {
@@ -119,7 +106,21 @@ startButton.addEventListener('click', (e) => {
     setupGame()
 })
 
-const array = []
+startPage.addEventListener('click', (e) => {
+    let category = e.target.innerHTML
+    console.log(category)
+    wordsObject.forEach(object => {
+        if(category === object.category) {
+            objectArray.push(object)
+        }
+    })
+    console.log(objectArray)
+    startGame()
+})
+
+hintButton.addEventListener('click', (e) => {
+    hintDiv.innerHTML = chosenHint
+})
 
 letterbutton.addEventListener('click', (e) => {
     const letter = e.target.innerHTML.toLowerCase()
@@ -145,14 +146,5 @@ letterbutton.addEventListener('click', (e) => {
     checkWin()
 })
 
-startPage.addEventListener('click', (e) => {
-    let category = e.target.innerHTML
-    console.log(category)
-    wordsObject.forEach(object => {
-        if(category === object.category) {
-            objectArray.push(object)
-        }
-    })
-    console.log(objectArray)
-    startGame()
-})
+//Call game setup on a initial page load
+setupGame()
