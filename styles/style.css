@@ -6,6 +6,33 @@ body {
 
 }
 
+ul {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin: 0 10px 10px 0;
+    list-style: none;
+    width: 35px;
+    height: 35px;
+    border: solid 1px black;
+    padding: .5em;
+}
+
+.letter {
+    color: transparent;
+}
+
+.show {
+    color: black;
+}
+
+.space {
+    width: 15px;
+    border: none;
+  }
+
 .container {
     text-align: center;
     margin: 0 auto;
@@ -25,4 +52,18 @@ body {
     height: 100px;
     width: 100px;
     margin: 0 auto 20px;
+    color: black;
+}
+
+#hangmanPic {
+    border: solid 1px black;
+    height: 100px;
+    width: 100px;
+}
+
+.hint-div {
+    margin: 10px auto 10px;
+    height: 100px;
+    width: 100px;
+    font-size: larger;
 }

@@ -11,45 +11,61 @@
 <body>
     <div class="container">
         <h1>HANGMAN</h1>
-        <div id="alphabet">
-            <button>A</button>
-            <button>B</button>
-            <button>C</button>
-            <button>D</button>
-            <button>E</button>
-            <button>F</button>
-            <button>G</button>
-            <button>H</button>
-            <button>I</button>
-            <button>J</button>
-            <button>K</button>
-            <button>L</button>
-            <button>M</button>
-            <button>N</button>
-            <button>O</button>
-            <button>P</button>
-            <button>Q</button>
-            <button>R</button>
-            <button>S</button>
-            <button>T</button>
-            <button>U</button>
-            <button>V</button>
-            <button>W</button>
-            <button>Y</button>
-            <button>Z</button>
+        <div id="startPage">
+            <h2>Select your Category</h2>
+            <button>Movies</button>
+            <button>Food</button>
+            <button>Computer</button>
+            <button>Music</button>
+            <button>Cartoon</button>
+            <button>Sport</button>
+            <button>Clothes</button>
         </div>
-        <div class="subject">
-            <p>Movies</p>
+        <div class="game-play-area">
+            <div id="alphabet">
+                <button>A</button>
+                <button>B</button>
+                <button>C</button>
+                <button>D</button>
+                <button>E</button>
+                <button>F</button>
+                <button>G</button>
+                <button>H</button>
+                <button>I</button>
+                <button>J</button>
+                <button>K</button>
+                <button>L</button>
+                <button>M</button>
+                <button>N</button>
+                <button>O</button>
+                <button>P</button>
+                <button>Q</button>
+                <button>R</button>
+                <button>S</button>
+                <button>T</button>
+                <button>U</button>
+                <button>V</button>
+                <button>W</button>
+                <button>Y</button>
+                <button>Z</button>
+            </div>
+            <div class="subject">
+                <p id="subject"></p>
+                <div id="tries-left"></div>
+            </div>
+            <div id="word-guess">
+                <ul></ul>
+            </div>
+            <div class="hangman-box">
+                <img id='hangmanPic' src="./images/0.jpg" alt="">
+            </div>
+            <button id="hint">Hint</button>
+            <button id="play-again">Play Again</button>
+    
+            <div class="hint-div"></div>
         </div>
-        <div class="word-guess">
-            _ _ _ _ _ _ _ _ _ _ _ _
         </div>
-        <div class="hangman-box">
-
-        </div>
-        <button id="hint">Hint</button>
-        <button id="play-again">Play Again</button>
-    </div>
+    <script src="objects.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
