@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+    <title>HangMan HangMan</title>
 </head>
 <body>
+    <!-- Added Led Zepplin Hangman Midi version for vibe -->
+    <audio controls  id="play" autoplay>
+        <source src="GallowsPole.mp3" type="audio/mpeg">
+    </audio>
+    <!-- Main Container -->
     <div class="container">
         <h1>HANGMAN</h1>
+        <!-- Start page that allows user to select catergory -->
         <div id="startPage">
             <h2>Select your Category</h2>
             <button>Movies</button>
@@ -21,6 +27,11 @@
             <button>Sport</button>
             <button>Clothes</button>
         </div>
+        <!-- Winner and loser element to display after game play -->
+        <h1 id="winner">YOU WIN!!!! <span style='font-size:100px;'>&#127881;</span></h1>
+        <h1 id="lost">YOU LOST!!! <span style='font-size:100px;'>&#128555;</span></h1>
+        
+        <!-- Main game play area. With alphabet letter buttons -->
         <div class="game-play-area">
             <div id="alphabet">
                 <button>A</button>
@@ -49,19 +60,23 @@
                 <button>Y</button>
                 <button>Z</button>
             </div>
+            <!-- Displays the catergory that was selected, and tries left. 6 tries total. -->
             <div class="subject">
                 <p id="subject"></p>
                 <div id="tries-left"></div>
             </div>
+            <!-- This element will dynamically display the boxes for the hidden word to guess. -->
             <div id="word-guess">
                 <ul></ul>
             </div>
+            <!-- This is the box with the hangman images. Every try it switches to the next image. Images start with and index of 0. -->
             <div class="hangman-box">
                 <img id='hangmanPic' src="./images/0.jpg" alt="">
             </div>
+            <!-- Buttons for displaying hint, as well as starting the game over. -->
             <button id="hint">Hint</button>
             <button id="play-again">Play Again</button>
-    
+            <!-- Element that displays the hint for the selected word. -->
             <div class="hint-div"></div>
         </div>
         </div>

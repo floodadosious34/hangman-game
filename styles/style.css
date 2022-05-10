@@ -3,7 +3,11 @@
 }
 
 body {
+    background-color: lightpink;
+}
 
+.container {
+    background-color: green;
 }
 
 ul {
@@ -37,6 +41,12 @@ li {
     text-align: center;
     margin: 0 auto;
 }
+
+#winner, #lost {
+    display: none;
+}
+
+
 
 .subject {
     border-bottom: solid 1px black;
